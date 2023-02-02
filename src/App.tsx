@@ -24,7 +24,7 @@ const INITIAL_NODES = [
 function App() {
   return (
     <div className="w-screen h-screen">
-      <ReactFlow nodeTypes={NODE_TYPES}>
+      <ReactFlow nodeTypes={NODE_TYPES} nodes={INITIAL_NODES}>
         <Background gap={12} size={2} color={zinc[200]} />
         <Controls />
       </ReactFlow>
