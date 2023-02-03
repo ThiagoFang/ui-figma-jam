@@ -71,6 +71,21 @@ function App() {
     ]);
   };
 
+  const addCircleNode = () => {
+    setNodes((nodes) => [
+      ...nodes,
+      {
+        id: crypto.randomUUID(),
+        type: "circle",
+        position: {
+          x: 750,
+          y: 350,
+        },
+        data: {},
+      },
+    ]);
+  };
+
   return (
     <div className="w-screen h-screen">
       <ReactFlow
@@ -94,6 +109,11 @@ function App() {
         <ToolBar.Button
           onClick={addSquareNode}
           className="w-32 h-32 bg-violet-500 mt-6 rounded transition-transform hover:-translate-y-2"
+        />
+
+        <ToolBar.Button
+          onClick={addCircleNode}
+          className="w-32 h-32 bg-sky-500 mt-6 rounded-full transition-transform hover:-translate-y-2"
         />
       </ToolBar.Root>
     </div>
