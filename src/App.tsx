@@ -12,6 +12,7 @@ import { zinc } from "tailwindcss/colors";
 import * as ToolBar from "@radix-ui/react-toolbar";
 
 import { Square } from "./Components/Nodes/Square/Square";
+import { Circle } from "./Components/Nodes/Circle/Circle";
 
 import "reactflow/dist/style.css";
 import { useCallback } from "react";
@@ -19,6 +20,7 @@ import DefaultEdge from "./Components/Edges/DefaultEdge";
 
 const NODE_TYPES = {
   square: Square,
+  circle: Circle,
 };
 
 const EDGE_TYPES = {
@@ -37,7 +39,7 @@ const INITIAL_NODES = [
   },
   {
     id: crypto.randomUUID(),
-    type: "square",
+    type: "circle",
     position: {
       x: 1000,
       y: 400,
@@ -88,7 +90,7 @@ function App() {
         <Controls />
       </ReactFlow>
 
-      <ToolBar.Root className="fixed bottom-20 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-lg border border-zinc-300 px-8 h-20 w-96 overflow-hidden">
+      <ToolBar.Root className="fixed bottom-20 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-lg border flex gap-3 border-zinc-300 px-8 h-20 w-96 overflow-hidden">
         <ToolBar.Button
           onClick={addSquareNode}
           className="w-32 h-32 bg-violet-500 mt-6 rounded transition-transform hover:-translate-y-2"
